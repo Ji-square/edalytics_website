@@ -10,5 +10,8 @@
   },
   "about.qmd": {
     "about.html": "07f4b106"
+  },
+  "posts/mi-proyecto/tema_2_Linear_Regression.ipynb": {
+    "tema_2_Linear_Regression.html": "c5f5ae0f"
   }
 }
