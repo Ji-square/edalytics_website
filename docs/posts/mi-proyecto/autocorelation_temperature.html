@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Harlow Malloc">
+<meta name="dcterms.date" content="2026-05-05">
+
+<title>Autocorre – edalytics_website</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">edalytics_website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Autocorre</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">autocorrelation</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Harlow Malloc </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 5, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div id="ee55167a" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/IPC206449?nult=200"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7cca17b3" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>respuesta <span class="op">=</span> requests.get(url)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(respuesta.status_code)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(respuesta.json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>200
+{'COD': 'IPC206449', 'Nombre': 'Nacional. Índice general. Variación mensual. ', 'FK_Unidad': 135, 'FK_Escala': 1, 'Data': [{'Fecha': 1114898400000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2005, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1117576800000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2005, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1120168800000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2005, 'Valor': -0.6, 'Secreto': False}, {'Fecha': 1122847200000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2005, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1125525600000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2005, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1128117600000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2005, 'Valor': 0.8, 'Secreto': False}, {'Fecha': 1130799600000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2005, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1133391600000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2005, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1136070000000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2006, 'Valor': -0.4, 'Secreto': False}, {'Fecha': 1138748400000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2006, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1141167600000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2006, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1143842400000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2006, 'Valor': 1.4, 'Secreto': False}, {'Fecha': 1146434400000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2006, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1149112800000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2006, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1151704800000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2006, 'Valor': -0.6, 'Secreto': False}, {'Fecha': 1154383200000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2006, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1157061600000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2006, 'Valor': -0.2, 'Secreto': False}, {'Fecha': 1159653600000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2006, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1162335600000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2006, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1164927600000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2006, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1167606000000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2007, 'Valor': -0.7, 'Secreto': False}, {'Fecha': 1170284400000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2007, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1172703600000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2007, 'Valor': 0.8, 'Secreto': False}, {'Fecha': 1175378400000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2007, 'Valor': 1.4, 'Secreto': False}, {'Fecha': 1177970400000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2007, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1180648800000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2007, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1183240800000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2007, 'Valor': -0.7, 'Secreto': False}, {'Fecha': 1185919200000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2007, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1188597600000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2007, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1191189600000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2007, 'Valor': 1.3, 'Secreto': False}, {'Fecha': 1193871600000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2007, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1196463600000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2007, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1199142000000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2008, 'Valor': -0.6, 'Secreto': False}, {'Fecha': 1201820400000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2008, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1204326000000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2008, 'Valor': 0.9, 'Secreto': False}, {'Fecha': 1207000800000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2008, 'Valor': 1.1, 'Secreto': False}, {'Fecha': 1209592800000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2008, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1212271200000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2008, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1214863200000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2008, 'Valor': -0.5, 'Secreto': False}, {'Fecha': 1217541600000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2008, 'Valor': -0.2, 'Secreto': False}, {'Fecha': 1220220000000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2008, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1222812000000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2008, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1225494000000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2008, 'Valor': -0.4, 'Secreto': False}, {'Fecha': 1228086000000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2008, 'Valor': -0.5, 'Secreto': False}, {'Fecha': 1230764400000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2009, 'Valor': -1.2, 'Secreto': False}, {'Fecha': 1233442800000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2009, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1235862000000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2009, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1238536800000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2009, 'Valor': 1.0, 'Secreto': False}, {'Fecha': 1241128800000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2009, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1243807200000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2009, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1246399200000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2009, 'Valor': -0.9, 'Secreto': False}, {'Fecha': 1249077600000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2009, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1251756000000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2009, 'Valor': -0.2, 'Secreto': False}, {'Fecha': 1254348000000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2009, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1257030000000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2009, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1259622000000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2009, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1262300400000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2010, 'Valor': -1.0, 'Secreto': False}, {'Fecha': 1264978800000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2010, 'Valor': -0.2, 'Secreto': False}, {'Fecha': 1267398000000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2010, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1270072800000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2010, 'Valor': 1.1, 'Secreto': False}, {'Fecha': 1272664800000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2010, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1275343200000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2010, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1277935200000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2010, 'Valor': -0.4, 'Secreto': False}, {'Fecha': 1280613600000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2010, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1283292000000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2010, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1285884000000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2010, 'Valor': 0.9, 'Secreto': False}, {'Fecha': 1288566000000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2010, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1291158000000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2010, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1293836400000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2011, 'Valor': -0.7, 'Secreto': False}, {'Fecha': 1296514800000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2011, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1298934000000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2011, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1301608800000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2011, 'Valor': 1.2, 'Secreto': False}, {'Fecha': 1304200800000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2011, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1306879200000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2011, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1309471200000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2011, 'Valor': -0.5, 'Secreto': False}, {'Fecha': 1312149600000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2011, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1314828000000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2011, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1317420000000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2011, 'Valor': 0.8, 'Secreto': False}, {'Fecha': 1320102000000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2011, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1322694000000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2011, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1325372400000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2012, 'Valor': -1.1, 'Secreto': False}, {'Fecha': 1328050800000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2012, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1330556400000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2012, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1333231200000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2012, 'Valor': 1.4, 'Secreto': False}, {'Fecha': 1335823200000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2012, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1338501600000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2012, 'Valor': -0.2, 'Secreto': False}, {'Fecha': 1341093600000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2012, 'Valor': -0.2, 'Secreto': False}, {'Fecha': 1343772000000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2012, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1346450400000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2012, 'Valor': 1.0, 'Secreto': False}, {'Fecha': 1349042400000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2012, 'Valor': 0.8, 'Secreto': False}, {'Fecha': 1351724400000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2012, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1354316400000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2012, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1356994800000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2013, 'Valor': -1.3, 'Secreto': False}, {'Fecha': 1359673200000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2013, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1362092400000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2013, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1364767200000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2013, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1367359200000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2013, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1370037600000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2013, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1372629600000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2013, 'Valor': -0.5, 'Secreto': False}, {'Fecha': 1375308000000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2013, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1377986400000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2013, 'Valor': -0.2, 'Secreto': False}, {'Fecha': 1380578400000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2013, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1383260400000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2013, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1385852400000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2013, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1388530800000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2014, 'Valor': -1.3, 'Secreto': False}, {'Fecha': 1391209200000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2014, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1393628400000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2014, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1396303200000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2014, 'Valor': 0.9, 'Secreto': False}, {'Fecha': 1398895200000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2014, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1401573600000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2014, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1404165600000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2014, 'Valor': -0.9, 'Secreto': False}, {'Fecha': 1406844000000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2014, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1409522400000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2014, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1412114400000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2014, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1414796400000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2014, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1417388400000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2014, 'Valor': -0.6, 'Secreto': False}, {'Fecha': 1420066800000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2015, 'Valor': -1.6, 'Secreto': False}, {'Fecha': 1422745200000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2015, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1425164400000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2015, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1427839200000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2015, 'Valor': 0.9, 'Secreto': False}, {'Fecha': 1430431200000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2015, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1433109600000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2015, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1435701600000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2015, 'Valor': -0.9, 'Secreto': False}, {'Fecha': 1438380000000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2015, 'Valor': -0.3, 'Secreto': False}, {'Fecha': 1441058400000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2015, 'Valor': -0.3, 'Secreto': False}, {'Fecha': 1443650400000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2015, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1446332400000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2015, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1448924400000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2015, 'Valor': -0.3, 'Secreto': False}, {'Fecha': 1451602800000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2016, 'Valor': -1.9, 'Secreto': False}, {'Fecha': 1454281200000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2016, 'Valor': -0.4, 'Secreto': False}, {'Fecha': 1456786800000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2016, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1459461600000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2016, 'Valor': 0.7, 'Secreto': False}, {'Fecha': 1462053600000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2016, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1464732000000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2016, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1467324000000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2016, 'Valor': -0.7, 'Secreto': False}, {'Fecha': 1470002400000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2016, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1472680800000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2016, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1475272800000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2016, 'Valor': 1.1, 'Secreto': False}, {'Fecha': 1477954800000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2016, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1480546800000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2016, 'Valor': 0.6, 'Secreto': False}, {'Fecha': 1483225200000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2017, 'Valor': -0.5, 'Secreto': False}, {'Fecha': 1485903600000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2017, 'Valor': -0.4, 'Secreto': False}, {'Fecha': 1488322800000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2017, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1490997600000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2017, 'Valor': 1.0, 'Secreto': False}, {'Fecha': 1493589600000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2017, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1496268000000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2017, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1498860000000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2017, 'Valor': -0.7, 'Secreto': False}, {'Fecha': 1501538400000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2017, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1504216800000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2017, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1506808800000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2017, 'Valor': 0.9, 'Secreto': False}, {'Fecha': 1509490800000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2017, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1512082800000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2017, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1514761200000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2018, 'Valor': -1.1, 'Secreto': False}, {'Fecha': 1517439600000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2018, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1519858800000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2018, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1522533600000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2018, 'Valor': 0.8, 'Secreto': False}, {'Fecha': 1525125600000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2018, 'Valor': 0.9, 'Secreto': False}, {'Fecha': 1527804000000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2018, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1530396000000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2018, 'Valor': -0.7, 'Secreto': False}, {'Fecha': 1533074400000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2018, 'Valor': 0.1, 'Secreto': False}, {'Fecha': 1535752800000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2018, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1538344800000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2018, 'Valor': 0.9, 'Secreto': False}, {'Fecha': 1541026800000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2018, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1543618800000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2018, 'Valor': -0.4, 'Secreto': False}, {'Fecha': 1546297200000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2019, 'Valor': -1.3, 'Secreto': False}, {'Fecha': 1548975600000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2019, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1551394800000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2019, 'Valor': 0.4, 'Secreto': False}, {'Fecha': 1554069600000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2019, 'Valor': 1.0, 'Secreto': False}, {'Fecha': 1556661600000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2019, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1559340000000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2019, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1561932000000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2019, 'Valor': -0.6, 'Secreto': False}, {'Fecha': 1564610400000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2019, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1567288800000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2019, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1569880800000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2019, 'Valor': 1.0, 'Secreto': False}, {'Fecha': 1572562800000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2019, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1575154800000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2019, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1577833200000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2020, 'Valor': -1.0, 'Secreto': False}, {'Fecha': 1580511600000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2020, 'Valor': -0.1, 'Secreto': False}, {'Fecha': 1583017200000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2020, 'Valor': -0.4, 'Secreto': False}, {'Fecha': 1585692000000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2020, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1588284000000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2020, 'Valor': 0.0, 'Secreto': False, 'Notas': [{'texto': 'La parcela tiene más del 50% de sus precios estimados', 'Fk_TipoNota': 1, 'textoTipo': None}]}, {'Fecha': 1590962400000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2020, 'Valor': 0.5, 'Secreto': False, 'Notas': [{'texto': 'La parcela tiene más del 50% de sus precios estimados', 'Fk_TipoNota': 1, 'textoTipo': None}]}, {'Fecha': 1593554400000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2020, 'Valor': -0.9, 'Secreto': False}, {'Fecha': 1596232800000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2020, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1598911200000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2020, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1601503200000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2020, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1604185200000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2020, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1606777200000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2020, 'Valor': 0.2, 'Secreto': False}, {'Fecha': 1609455600000, 'FK_TipoDato': 1, 'FK_Periodo': 1, 'Anyo': 2021, 'Valor': 0.0, 'Secreto': False}, {'Fecha': 1612134000000, 'FK_TipoDato': 1, 'FK_Periodo': 2, 'Anyo': 2021, 'Valor': -0.6, 'Secreto': False}, {'Fecha': 1614553200000, 'FK_TipoDato': 1, 'FK_Periodo': 3, 'Anyo': 2021, 'Valor': 1.0, 'Secreto': False}, {'Fecha': 1617228000000, 'FK_TipoDato': 1, 'FK_Periodo': 4, 'Anyo': 2021, 'Valor': 1.2, 'Secreto': False}, {'Fecha': 1619820000000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2021, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1622498400000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2021, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1625090400000, 'FK_TipoDato': 1, 'FK_Periodo': 7, 'Anyo': 2021, 'Valor': -0.8, 'Secreto': False}, {'Fecha': 1627768800000, 'FK_TipoDato': 1, 'FK_Periodo': 8, 'Anyo': 2021, 'Valor': 0.5, 'Secreto': False}, {'Fecha': 1630447200000, 'FK_TipoDato': 1, 'FK_Periodo': 9, 'Anyo': 2021, 'Valor': 0.8, 'Secreto': False}, {'Fecha': 1633039200000, 'FK_TipoDato': 1, 'FK_Periodo': 10, 'Anyo': 2021, 'Valor': 1.8, 'Secreto': False}, {'Fecha': 1635721200000, 'FK_TipoDato': 1, 'FK_Periodo': 11, 'Anyo': 2021, 'Valor': 0.3, 'Secreto': False}, {'Fecha': 1638313200000, 'FK_TipoDato': 1, 'FK_Periodo': 12, 'Anyo': 2021, 'Valor': 1.2, 'Secreto': False}]}</code></pre>
+</div>
+</div>
+<div id="1c6aaacf" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>datos_json <span class="op">=</span> respuesta.json()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(datos_json))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'dict'&gt;</code></pre>
+</div>
+</div>
+<div id="664d9291" class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(datos_json.keys())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>dict_keys(['COD', 'Nombre', 'FK_Unidad', 'FK_Escala', 'Data'])</code></pre>
+</div>
+</div>
+<div id="e8836878" class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(datos_json[<span class="st">'Data'</span>][<span class="dv">0</span>])</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(datos_json[<span class="st">'Data'</span>][<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'Fecha': 1114898400000, 'FK_TipoDato': 1, 'FK_Periodo': 5, 'Anyo': 2005, 'Valor': 0.2, 'Secreto': False}
+{'Fecha': 1117576800000, 'FK_TipoDato': 1, 'FK_Periodo': 6, 'Anyo': 2005, 'Valor': 0.2, 'Secreto': False}</code></pre>
+</div>
+</div>
+<div id="69aa2af8" class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Electricidad <span class="op">=</span> pd.DataFrame.from_dict(datos_json[<span class="st">'Data'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="b865a267" class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Electricidad.head())</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Electricidad.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           Fecha  FK_TipoDato  FK_Periodo  Anyo  Valor  Secreto Notas
+0  1114898400000            1           5  2005    0.2    False   NaN
+1  1117576800000            1           6  2005    0.2    False   NaN
+2  1120168800000            1           7  2005   -0.6    False   NaN
+3  1122847200000            1           8  2005    0.4    False   NaN
+4  1125525600000            1           9  2005    0.6    False   NaN
+(200, 7)</code></pre>
+</div>
+</div>
+<div id="0fb8a1a6" class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Electricidad.columns <span class="op">=</span> [<span class="st">"fecha"</span>,<span class="st">"fk_dt"</span>,<span class="st">"fk_period"</span>,<span class="st">"ano"</span>,<span class="st">"valor"</span>,<span class="st">"secreto"</span>,<span class="st">"notas"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="61ee9f0f" class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_elec <span class="op">=</span> Electricidad[[<span class="st">"ano"</span>,<span class="st">"fk_period"</span>, <span class="st">"valor"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fa2c3feb" class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_elec.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ano</th>
+<th data-quarto-table-cell-role="th">fk_period</th>
+<th data-quarto-table-cell-role="th">valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2005</td>
+<td>5</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2005</td>
+<td>6</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2005</td>
+<td>7</td>
+<td>-0.6</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2005</td>
+<td>8</td>
+<td>0.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2005</td>
+<td>9</td>
+<td>0.6</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="temperature-data" class="level1">
+<h1>Temperature data</h1>
+<div id="18ad72c6" class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>url_temp <span class="op">=</span> <span class="st">"https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/IPC206450?nult=200"</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>respuesta_temp <span class="op">=</span> requests.get(url_temp)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(respuesta_temp.status_code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>200</code></pre>
+</div>
+</div>
+<div id="023b6725" class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>temp_dict <span class="op">=</span> respuesta_temp.json()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="91e08da8" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>temp_df <span class="op">=</span> pd.DataFrame.from_dict(temp_dict[<span class="st">'Data'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c165ca71" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>temp_df <span class="op">=</span> temp_df[[<span class="st">"Anyo"</span>,<span class="st">"FK_Periodo"</span>,<span class="st">"Valor"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="406b470a" class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>temp_df.columns<span class="op">=</span>[<span class="st">"ano"</span>,<span class="st">"fk_period"</span>,<span class="st">"valor"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="bb8d5783" class="cell" data-execution_count="89">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span> df_elec.merge(temp_df, left_on <span class="op">=</span> [<span class="st">"ano"</span>,<span class="st">"fk_period"</span>],right_on <span class="op">=</span> [<span class="st">"ano"</span>, <span class="st">"fk_period"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7240c18b" class="cell" data-execution_count="91">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">"ano"</span>, <span class="st">"fk_period"</span>, <span class="st">"electricidad"</span>, <span class="st">"temperatura"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3595da26" class="cell" data-execution_count="93">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ano</th>
+<th data-quarto-table-cell-role="th">fk_period</th>
+<th data-quarto-table-cell-role="th">electricidad</th>
+<th data-quarto-table-cell-role="th">temperatura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2005</td>
+<td>5</td>
+<td>0.2</td>
+<td>2.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2005</td>
+<td>6</td>
+<td>0.2</td>
+<td>2.9</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2005</td>
+<td>7</td>
+<td>-0.6</td>
+<td>2.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2005</td>
+<td>8</td>
+<td>0.4</td>
+<td>2.7</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2005</td>
+<td>9</td>
+<td>0.6</td>
+<td>2.9</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>2021</td>
+<td>8</td>
+<td>0.5</td>
+<td>0.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>2021</td>
+<td>9</td>
+<td>0.8</td>
+<td>0.7</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>2021</td>
+<td>10</td>
+<td>1.8</td>
+<td>0.9</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>2021</td>
+<td>11</td>
+<td>0.3</td>
+<td>1.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>2021</td>
+<td>12</td>
+<td>1.2</td>
+<td>1.5</td>
+</tr>
+</tbody>
+</table>
+
+<p>200 rows × 4 columns</p>
+</div>
+</div>
+</div>
+<div id="d3fecf8d" class="cell" data-execution_count="94">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="1b36fd5f" class="cell" data-execution_count="98">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ano</th>
+<th data-quarto-table-cell-role="th">fk_period</th>
+<th data-quarto-table-cell-role="th">electricidad</th>
+<th data-quarto-table-cell-role="th">temperatura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2005</td>
+<td>5</td>
+<td>0.2</td>
+<td>2.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2005</td>
+<td>6</td>
+<td>0.2</td>
+<td>2.9</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2005</td>
+<td>7</td>
+<td>-0.6</td>
+<td>2.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2005</td>
+<td>8</td>
+<td>0.4</td>
+<td>2.7</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2005</td>
+<td>9</td>
+<td>0.6</td>
+<td>2.9</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>2021</td>
+<td>8</td>
+<td>0.5</td>
+<td>0.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>2021</td>
+<td>9</td>
+<td>0.8</td>
+<td>0.7</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>2021</td>
+<td>10</td>
+<td>1.8</td>
+<td>0.9</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>2021</td>
+<td>11</td>
+<td>0.3</td>
+<td>1.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>2021</td>
+<td>12</td>
+<td>1.2</td>
+<td>1.5</td>
+</tr>
+</tbody>
+</table>
+
+<p>200 rows × 4 columns</p>
+</div>
+</div>
+</div>
+<div id="f287fff2" class="cell" data-execution_count="104">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ano</th>
+<th data-quarto-table-cell-role="th">fk_period</th>
+<th data-quarto-table-cell-role="th">electricidad</th>
+<th data-quarto-table-cell-role="th">temperatura</th>
+<th data-quarto-table-cell-role="th">fecha</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2005</td>
+<td>5</td>
+<td>0.2</td>
+<td>2.7</td>
+<td>2005-05-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2005</td>
+<td>6</td>
+<td>0.2</td>
+<td>2.9</td>
+<td>2005-06-01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2005</td>
+<td>7</td>
+<td>-0.6</td>
+<td>2.7</td>
+<td>2005-07-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2005</td>
+<td>8</td>
+<td>0.4</td>
+<td>2.7</td>
+<td>2005-08-01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2005</td>
+<td>9</td>
+<td>0.6</td>
+<td>2.9</td>
+<td>2005-09-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>2021</td>
+<td>8</td>
+<td>0.5</td>
+<td>0.7</td>
+<td>2021-08-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>2021</td>
+<td>9</td>
+<td>0.8</td>
+<td>0.7</td>
+<td>2021-09-01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>2021</td>
+<td>10</td>
+<td>1.8</td>
+<td>0.9</td>
+<td>2021-10-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>2021</td>
+<td>11</td>
+<td>0.3</td>
+<td>1.4</td>
+<td>2021-11-01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>2021</td>
+<td>12</td>
+<td>1.2</td>
+<td>1.5</td>
+<td>2021-12-01</td>
+</tr>
+</tbody>
+</table>
+
+<p>200 rows × 5 columns</p>
+</div>
+</div>
+</div>
+<div id="ce18b7e2" class="cell" data-execution_count="109">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data <span class="op">=</span> df,x <span class="op">=</span> <span class="st">'fecha'</span>, y <span class="op">=</span> <span class="st">'electricidad'</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data <span class="op">=</span> df,x <span class="op">=</span> <span class="st">'fecha'</span>, y <span class="op">=</span> <span class="st">'temperatura'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="autocorelation_temperature_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="3c839aad" class="cell" data-execution_count="111">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ea29b39f" class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">GPA</th>
+<th data-quarto-table-cell-role="th">TUCE</th>
+<th data-quarto-table-cell-role="th">PSI</th>
+<th data-quarto-table-cell-role="th">GRADE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2.66</td>
+<td>20.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2.89</td>
+<td>22.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.28</td>
+<td>24.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2.92</td>
+<td>12.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4.00</td>
+<td>21.0</td>
+<td>0.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>2.86</td>
+<td>17.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>2.76</td>
+<td>17.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>2.87</td>
+<td>21.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>3.03</td>
+<td>25.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>3.92</td>
+<td>29.0</td>
+<td>0.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>2.63</td>
+<td>20.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>3.32</td>
+<td>23.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>3.57</td>
+<td>23.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>3.26</td>
+<td>25.0</td>
+<td>0.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>3.53</td>
+<td>26.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>2.74</td>
+<td>19.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>2.75</td>
+<td>25.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>2.83</td>
+<td>19.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18</td>
+<td>3.12</td>
+<td>23.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>3.16</td>
+<td>25.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">20</td>
+<td>2.06</td>
+<td>22.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">21</td>
+<td>3.62</td>
+<td>28.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22</td>
+<td>2.89</td>
+<td>14.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">23</td>
+<td>3.51</td>
+<td>26.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24</td>
+<td>3.54</td>
+<td>24.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25</td>
+<td>2.83</td>
+<td>27.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26</td>
+<td>3.39</td>
+<td>17.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">27</td>
+<td>2.67</td>
+<td>24.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">28</td>
+<td>3.65</td>
+<td>21.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">29</td>
+<td>4.00</td>
+<td>23.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">30</td>
+<td>3.10</td>
+<td>21.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">31</td>
+<td>2.39</td>
+<td>19.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
