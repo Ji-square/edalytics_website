@@ -1,22 +1,62 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - about.qmd
+    - research.qmd
+    - blog.qmd
+    - newsletter.qmd
+    - cv.qmd
+    - contacto.qmd
+    - posts/**/*.ipynb
+    - posts/**/*.qmd
 
 website:
-  title: "edalytics_website"
+  title: "edalytics"
+  description: "Economía aplicada, econometría y análisis de datos con Python"
+  favicon: favicon.png
+  
   navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: research.qmd
+        text: Research
+      - href: blog.qmd
+        text: Blog
+      - href: newsletter.qmd
+        text: Newsletter
+      - href: cv.qmd
+        text: CV
+      - href: about.qmd
+        text: About
+      - href: contacto.qmd
+        text: Contacto
     right:
-      - about.qmd
+      - icon: linkedin
+        href: https://www.linkedin.com/in/eduard-de-jesus-romero-mercedes-580753125/
+      - icon: twitter-x
+        href: https://x.com/MercedesEd67541
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/ji-square
+
+  page-footer:
+    left: "© 2026 Eduard Romero — edalytics"
+    center: "Economía aplicada · Econometría · Python"
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/eduard-de-jesus-romero-mercedes-580753125/
+      - icon: twitter-x
+        href: https://x.com/MercedesEd67541
+      - icon: github
+        href: https://github.com/ji-square
+
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: cosmo
     css: styles.css
-
-
-
+    toc: true
+    toc-depth: 3
+    smooth-scroll: true

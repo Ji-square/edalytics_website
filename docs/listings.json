@@ -1,11 +1,9 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
-      "/posts/post-with-code/index.html",
-      "/posts/mi-proyecto/autocorelation_temperature.html",
-      "/posts/welcome/index.html"
+      "/posts/mi-proyecto/autocorelation_temperature.html"
     ]
   }
 ]

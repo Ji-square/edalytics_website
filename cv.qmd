@@ -1,0 +1,53 @@
+---
+title: "Curriculum Vitae"
+---
+
+## Eduard de Jesús Romero Mercedes
+
+Zaragoza, España · [LinkedIn](https://www.linkedin.com/in/eduard-de-jesus-romero-mercedes-580753125/) · 
+[GitHub](https://github.com/ji-square)
+
+---
+
+### Formación
+
+**Máster en Economía** · En curso
+Universidad · Zaragoza
+
+**MSc Data Analysis** · 2024
+London Metropolitan University · Londres, Reino Unido
+
+---
+
+### Experiencia
+
+**Experiencia internacional** · 2016-2024
+8 años en Reino Unido — inglés C1 nivel nativo de uso
+
+---
+
+### Habilidades técnicas
+
+| Área | Herramientas |
+|---|---|
+| Lenguajes | Python, R (básico) |
+| Econometría | statsmodels, OLS, HAC, series temporales, panel |
+| Datos | pandas, numpy, Eurostat API, EU KLEMS |
+| Visualización | Plotly, matplotlib, great_tables |
+| Publicación | Quarto, GitHub Pages, Git |
+
+### Idiomas
+- Español — nativo
+- Inglés — C1 (en certificación)
+
+---
+
+### Proyectos de investigación
+
+**Función de Producción Cobb-Douglas — España 1995-2021** · Mayo 2026
+Estimación econométrica con datos de Eurostat, EU KLEMS y BBVA-Ivie.
+[Ver proyecto →](posts/mi-proyecto/cobb_douglas_spain_v2_clean.html)
+
+---
+
+[Descargar CV en PDF](#){.btn .btn-outline-dark}

@@ -30,5 +30,20 @@
   "posts/mi-proyecto/cobb_douglas_spain_v2_clean.ipynb": {
     "cobb_douglas_spain_v2_clean.html": "098c8fc2",
     "cobb_douglas_spain_v2_clean.tex": "dd1fcef5"
+  },
+  "research.qmd": {
+    "research.html": "451f0aa2"
+  },
+  "contacto.qmd": {
+    "contacto.html": "d33d49bf"
+  },
+  "cv.qmd": {
+    "cv.html": "3245f0fa"
+  },
+  "newsletter.qmd": {
+    "newsletter.html": "ac343822"
+  },
+  "blog.qmd": {
+    "blog.html": "6e49f7be"
   }
 }

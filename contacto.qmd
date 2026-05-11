@@ -1,0 +1,24 @@
+---
+title: "Contacto"
+---
+
+## Contacto
+
+Abierto a colaboraciones, consultoría y oportunidades profesionales 
+en econometría aplicada y análisis de datos.
+
+### Canales
+
+- **LinkedIn** — [Eduard Romero](https://www.linkedin.com/in/eduard-de-jesus-romero-mercedes-580753125/) 
+— canal preferido para contacto profesional
+- **Twitter/X** — [@MercedesEd67541](https://x.com/MercedesEd67541) 
+— análisis y divulgación económica
+- **GitHub** — [ji-square](https://github.com/ji-square) 
+— código y proyectos
+
+### Áreas de colaboración
+
+- Análisis econométrico para empresas e instituciones
+- Visualización de datos económicos
+- Modelos de demanda, pricing y localización
+- Informes macroeconómicos con datos reales

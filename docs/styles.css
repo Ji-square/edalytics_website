@@ -1,1 +1,30 @@
-/* css styles */
+/* Tipografía */
+body {
+  font-family: 'Georgia', serif;
+  color: #2c3e50;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  color: #2c3e50;
+}
+
+/* Navbar */
+.navbar {
+  border-bottom: 2px solid #2c3e50;
+}
+
+/* Links */
+a {
+  color: #2c3e50;
+}
+
+a:hover {
+  color: #e74c3c;
+}
+
+/* Card hover effect */
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}

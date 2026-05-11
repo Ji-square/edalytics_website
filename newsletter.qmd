@@ -1,0 +1,22 @@
+---
+title: "Newsletter"
+description: "Análisis económico periódico"
+---
+
+## edalytics newsletter
+
+Análisis económico aplicado con datos reales. Periodicidad mensual.
+
+Cada entrega incluye:
+
+- Un análisis econométrico sobre la economía española o europea
+- Gráficas interactivas y código reproducible
+- Conexión con teoría económica (Mankiw, Wooldridge, Varian)
+
+### Suscribirse
+
+*Newsletter en construcción — disponible próximamente.*
+
+Si quieres ser notificado cuando esté disponible, escríbeme a través de la
+página de [Contacto](contacto.qmd) o en
+[LinkedIn](https://www.linkedin.com/in/eduard-de-jesus-romero-mercedes-580753125/).

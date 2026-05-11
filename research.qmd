@@ -1,0 +1,31 @@
+---
+title: "Research"
+description: "Proyectos de econometría aplicada y análisis de datos"
+---
+
+Esta sección recoge los proyectos de investigación aplicada, working papers 
+y análisis econométricos. Todos los proyectos son reproducibles — el código 
+completo está disponible en [GitHub](https://github.com/ji-square).
+
+## Working Papers
+
+### Función de Producción Cobb-Douglas — España 1995-2021
+**Mayo 2026** | Econometría · Series Temporales · Economía Española
+
+Estimación de la función de producción Cobb-Douglas para España usando datos 
+reales de Eurostat, EU KLEMS y la Fundación BBVA-Ivie. Se detectan y corrigen 
+problemas de autocorrelación serial (Wooldridge cap. 12) y se analizan las 
+fuentes del crecimiento económico español mediante contabilidad del crecimiento.
+
+**Resultados principales:** α = 0,407 · β = 0,601 · α+β = 1,008 · PTF cayó durante 
+la burbuja inmobiliaria (2000-2009)
+
+[Leer →](posts/mi-proyecto/cobb_douglas_spain_v2_clean.html){.btn .btn-outline-dark}
+
+---
+
+## En desarrollo
+
+- **Curva de Phillips — España 1980-2023** · Mankiw cap. 20 + Wooldridge cap. 12
+- **Regla de Taylor para el BCE** · Mankiw cap. 14 + Series temporales
+- **Ecuación de Mincer — España** · Varian cap. 27 + Variables instrumentales
