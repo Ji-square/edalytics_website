@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
+      "/posts/mi-proyecto/autocorelation_temperature.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",

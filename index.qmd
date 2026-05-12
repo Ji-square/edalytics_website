@@ -1,6 +1,12 @@
 ---
-title: "edalytics"
+title: ""
 page-layout: full
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 5
+  categories: true
 ---
 
 ::: {.hero}
@@ -16,4 +22,3 @@ y Máster en Economía en curso.
 :::
 
 ## Últimas publicaciones
-

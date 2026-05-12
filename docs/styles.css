@@ -76,3 +76,31 @@ a:hover {
 .sidebar-navigation {
   background-color: #fafaf8 !important;
 }
+
+.btn-outline-dark {
+  color: #ffffff !important;
+  border-color: #2c3e50 !important;
+  background-color: #2c3e50 !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: #34495e !important;
+  border-color: #34495e !important;
+  color: #ffffff !important;
+}
+
+/* Author card */
+.quarto-title-author-photo img {
+  border-radius: 50% !important;
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover;
+  border: 2px solid #2c3e50;
+}
+
+.quarto-title-author {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
