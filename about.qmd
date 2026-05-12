@@ -25,15 +25,20 @@ Esta web es mi espacio de investigación aplicada — proyectos reproducibles
 que combinan teoría económica con datos reales e institucionales.
 
 ### Formación
-- **MSc Data Analysis** — London Metropolitan University
-- **Máster en Economía** — En curso
-- **C1 Advanced English** — En preparación
+
+**MSc Data Analysis** — London Metropolitan University  
+**Máster en Economía** — En curso  
+**C1 Advanced English** — En preparación
 
 ### Intereses de investigación
-- Macroeconometría y series temporales
-- Econometría de panel
-- Productividad y crecimiento económico
-- Política monetaria y fiscal
+
+Macroeconometría y series temporales · Econometría de panel · Productividad y crecimiento económico · Política monetaria y fiscal
 
 ### Herramientas
 Python · pandas · statsmodels · Plotly · Quarto · Git
+
+<a href="https://www.buymeacoffee.com/tu-usuario" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+       alt="Buy Me A Coffee" 
+       style="height: 45px; width: 162px;">
+</a>

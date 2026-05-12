@@ -2,6 +2,7 @@
 body {
   font-family: 'Georgia', serif;
   color: #2c3e50;
+  background-color: #fafaf8;
 }
 
 h1, h2, h3 {
@@ -11,7 +12,16 @@ h1, h2, h3 {
 
 /* Navbar */
 .navbar {
-  border-bottom: 2px solid #2c3e50;
+  background-color: #2c3e50 !important;
+  border-bottom: none;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
 }
 
 /* Links */
@@ -27,4 +37,42 @@ a:hover {
 .card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease;
+}
+
+/* About page */
+.about-contents ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.about-contents li {
+  margin-bottom: 0.3rem;
+}
+
+.about-contents ul li::before {
+  content: "→ ";
+  color: #e74c3c;
+}
+
+/* TOC */
+.sidebar nav[role="doc-toc"] a {
+  color: #2c3e50 !important;
+}
+
+.sidebar nav[role="doc-toc"] a:hover {
+  color: #e74c3c !important;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  color: #e74c3c !important;
+  border-left: 2px solid #e74c3c;
+}
+/* TOC fondo */
+.sidebar {
+  background-color: #fafaf8 !important;
+}
+
+.sidebar-navigation {
+  background-color: #fafaf8 !important;
 }

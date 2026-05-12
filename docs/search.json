@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
-    "href": "posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
-    "title": "Función de Producción Cobb-Douglas — España 1995-2021",
-    "section": "",
-    "text": "Este trabajo estima una función de producción Cobb-Douglas para la economía española en el período 1995–2021 utilizando datos de Eurostat, EU KLEMS y la Fundación BBVA-Ivie. Los resultados muestran rendimientos constantes a escala (α + β = 1,008), con una elasticidad del capital α = 0,407 y una elasticidad del trabajo β = 0,601, consistentes con la teoría neoclásica (Mankiw, 2019, cap. 3). Se detecta y corrige la autocorrelación serial siguiendo a Wooldridge (2019, cap. 12) mediante primeras diferencias, variables ficticias para rupturas estructurales y errores estándar HAC. La Productividad Total de los Factores (PTF) muestra una tendencia decreciente durante la burbuja inmobiliaria (2000–2009) y una recuperación posterior, lo que sugiere que el crecimiento español fue predominantemente extensivo durante el período expansivo.\nPalabras clave: Cobb-Douglas, PTF, Autocorrelación, Economía española, Errores HAC\nCódigos JEL: C22, E23, O47\n\n\n\n\n\n\nHallazgos principales\n\n\n\n\nRendimientos constantes a escala — α + β = 1,008, consistente con la teoría neoclásica\nElasticidad del capital α = 0,407 y elasticidad del trabajo β = 0,601\nLa PTF cayó durante la burbuja inmobiliaria (2000–2009): el crecimiento español fue extensivo, no intensivo\nCOVID redujo el PIB un 3,7% adicional a lo explicado por los factores productivos\nAutocorrelación resuelta mediante primeras diferencias y errores estándar HAC\nEspaña creció más que Alemania en PIB total (+57,8% vs +40,1%) pero menos en PIB per cápita (+31,9% vs +37,3%)"
-  },
-  {
     "objectID": "posts/mi-proyecto/cobb_douglas_spain_v2_clean.html#resumen",
     "href": "posts/mi-proyecto/cobb_douglas_spain_v2_clean.html#resumen",
     "title": "Función de Producción Cobb-Douglas — España 1995-2021",
@@ -137,14 +130,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Economista y analista de datos con base en Zaragoza. Especializado en econometría aplicada, análisis macroeconómico y visualización de datos económicos con Python.\nEsta web es mi espacio de investigación aplicada — proyectos reproducibles que combinan teoría económica con datos reales e institucionales.\n\n\n\nMSc Data Analysis — London Metropolitan University\nMáster en Economía — En curso\nC1 Advanced English — En preparación\n\n\n\n\n\nMacroeconometría y series temporales\nEconometría de panel\nProductividad y crecimiento económico\nPolítica monetaria y fiscal\n\n\n\n\nPython · pandas · statsmodels · Plotly · Quarto · Git"
+    "text": "Economista y analista de datos con base en Zaragoza. Especializado en econometría aplicada, análisis macroeconómico y visualización de datos económicos con Python.\nEsta web es mi espacio de investigación aplicada — proyectos reproducibles que combinan teoría económica con datos reales e institucionales.\n\n\nMSc Data Analysis — London Metropolitan University\nMáster en Economía — En curso\nC1 Advanced English — En preparación\n\n\n\nMacroeconometría y series temporales · Econometría de panel · Productividad y crecimiento económico · Política monetaria y fiscal\n\n\n\nPython · pandas · statsmodels · Plotly · Quarto · Git"
   },
   {
     "objectID": "about.html#eduard-romero",
     "href": "about.html#eduard-romero",
     "title": "About",
     "section": "",
-    "text": "Economista y analista de datos con base en Zaragoza. Especializado en econometría aplicada, análisis macroeconómico y visualización de datos económicos con Python.\nEsta web es mi espacio de investigación aplicada — proyectos reproducibles que combinan teoría económica con datos reales e institucionales.\n\n\n\nMSc Data Analysis — London Metropolitan University\nMáster en Economía — En curso\nC1 Advanced English — En preparación\n\n\n\n\n\nMacroeconometría y series temporales\nEconometría de panel\nProductividad y crecimiento económico\nPolítica monetaria y fiscal\n\n\n\n\nPython · pandas · statsmodels · Plotly · Quarto · Git"
+    "text": "Economista y analista de datos con base en Zaragoza. Especializado en econometría aplicada, análisis macroeconómico y visualización de datos económicos con Python.\nEsta web es mi espacio de investigación aplicada — proyectos reproducibles que combinan teoría económica con datos reales e institucionales.\n\n\nMSc Data Analysis — London Metropolitan University\nMáster en Economía — En curso\nC1 Advanced English — En preparación\n\n\n\nMacroeconometría y series temporales · Econometría de panel · Productividad y crecimiento económico · Política monetaria y fiscal\n\n\n\nPython · pandas · statsmodels · Plotly · Quarto · Git"
   },
   {
     "objectID": "blog.html",
