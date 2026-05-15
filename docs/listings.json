@@ -1,14 +1,18 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
+      "/posts/ia_asia_pacifico/IA_Asia_Pacifico.html",
+      "/posts/ia_asia_pacifico/IA_Asia_Pacifico_v2.html",
       "/posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
       "/posts/mi-proyecto/autocorelation_temperature.html"
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
+      "/posts/ia_asia_pacifico/IA_Asia_Pacifico.html",
+      "/posts/ia_asia_pacifico/IA_Asia_Pacifico_v2.html",
       "/posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
       "/posts/mi-proyecto/autocorelation_temperature.html"
     ]

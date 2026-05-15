@@ -45,5 +45,11 @@
   },
   "blog.qmd": {
     "blog.html": "6e49f7be"
+  },
+  "posts/ia_asia_pacifico/IA_Asia_Pacifico.ipynb": {
+    "IA_Asia_Pacifico.html": "fe1345b8"
+  },
+  "posts/ia_asia_pacifico/IA_Asia_Pacifico_v2.ipynb": {
+    "IA_Asia_Pacifico_v2.html": "5e432476"
   }
 }
