@@ -1,18 +1,26 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
       "/posts/ia_asia_pacifico/IA_Asia_Pacifico.html",
       "/posts/ia_asia_pacifico/IA_Asia_Pacifico_v2.html",
+      "/posts/ia_asia_pacifico/ch_1.1.html",
+      "/posts/Wooldridge_capitulo13/wooldridge_capitulo13.html",
+      "/posts/ia_asia_pacifico/ensayo.html",
+      "/posts/inflacion_españa/inflacion_españa.html",
       "/posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
       "/posts/mi-proyecto/autocorelation_temperature.html"
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/ia_asia_pacifico/IA_Asia_Pacifico.html",
       "/posts/ia_asia_pacifico/IA_Asia_Pacifico_v2.html",
+      "/posts/ia_asia_pacifico/ch_1.1.html",
+      "/posts/Wooldridge_capitulo13/wooldridge_capitulo13.html",
+      "/posts/ia_asia_pacifico/ensayo.html",
+      "/posts/inflacion_españa/inflacion_españa.html",
       "/posts/mi-proyecto/cobb_douglas_spain_v2_clean.html",
       "/posts/mi-proyecto/autocorelation_temperature.html"
     ]

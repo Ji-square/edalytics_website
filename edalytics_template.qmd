@@ -1,0 +1,119 @@
+---
+# ══════════════════════════════════════════════════════════════════
+#  edalytics — Plantilla oficial de notebook
+#  Copia este bloque al inicio de cada nuevo .ipynb o .qmd
+#  Solo cambia: title, description, categories, image, date
+# ══════════════════════════════════════════════════════════════════
+
+title: "Título del análisis"
+author:
+  - name: Eduard Romero
+    url: https://ji-square.github.io/edalytics_website/
+    affiliation: edalytics
+    affiliation-url: https://ji-square.github.io/edalytics_website/
+    attributes:
+      corresponding: true
+    degrees:
+      - MSc Data Analysis, London Metropolitan University
+      - Máster en Economía, En curso
+
+date: today
+date-format: "MMMM D, YYYY"
+
+image: thumbnails.jpg   # <- reemplaza con la imagen del post
+
+description: "Descripción breve del análisis para la página de blog."
+
+categories:             # <- elige las que apliquen
+  - Macroeconometría
+  - Microeconometría
+  - Panel Data
+  - Series Temporales
+  - Python
+  - Econometría
+  - Economía Española
+  - Asia-Pacífico
+  - Machine Learning
+  - Visualización
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    theme: cosmo
+    code-fold: true
+    code-tools: true
+    fig-width: 9
+    fig-height: 5
+    number-sections: true
+    margin-header: |
+      <div style="
+        position: sticky;
+        top: 20px;
+        text-align: center;
+        padding: 1rem;
+        border: none;
+        border-radius: 4px;
+        background: #fafaf8;
+      ">
+        <img src="thumbnails.jpg" style="
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #fafaf8;
+          display: block;
+          margin: 0 auto 0.5rem;
+        ">
+        <strong>Eduard Romero</strong><br>
+        <small>Economista aplicado</small><br>
+        <small>edalytics</small><br><br>
+        <a href="https://x.com/edalytics_" style="margin:2px">🐦</a>
+        <a href="https://www.linkedin.com/in/eduard-de-jesus-romero-mercedes-580753125/" style="margin:2px">💼</a>
+        <a href="https://github.com/ji-square" style="margin:2px">🐙</a>
+      </div>
+
+execute:
+  echo: true
+  eval: false
+  warning: false
+  message: false
+---
+
+<!--
+════════════════════════════════════════════════════════════════════
+  INSTRUCCIONES DE USO
+════════════════════════════════════════════════════════════════════
+
+1. Copia el bloque --- ... --- completo al inicio de tu notebook
+   como celda de tipo RAW (no markdown, no code)
+
+2. Cambia únicamente:
+   - title          → título del análisis
+   - description    → 1-2 frases para la página de blog
+   - categories     → elimina las que no apliquen
+   - image          → nombre de tu imagen de portada (misma carpeta)
+   - date           → "today" genera la fecha automáticamente
+
+3. NO toques el bloque format: ni execute: — es tu firma visual
+
+4. Para el módulo de estilo Python (gráficos), importa siempre:
+   from edalytics_style import *
+   (ver edalytics_style.py en la misma carpeta)
+
+════════════════════════════════════════════════════════════════════
+  ESTRUCTURA ESTÁNDAR DE SECCIONES
+════════════════════════════════════════════════════════════════════
+
+## 1. Resumen                    ← abstract ejecutivo con hallazgos
+## 2. Datos                      ← fuentes, variables, descarga
+## 3. Estadísticos descriptivos  ← tablas + gráficos exploratorios
+## 4. Especificación econométrica ← modelo, hipótesis, estimación
+## 5. Resultados                 ← coeficientes, diagnósticos
+## 6. Discusión                  ← interpretación económica
+## 7. Conclusiones               ← hallazgos + agenda futura
+## 8. Referencias                ← siempre al final
+
+════════════════════════════════════════════════════════════════════
+-->
